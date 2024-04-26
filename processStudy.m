@@ -1,10 +1,7 @@
 function processStudy(sweepName, deltaZ, options)
-    % sweepName: path to directory of study
-    % deltaZ: distance (um) above funnel tip to analyze intensity
-
     arguments
         sweepName % path to directory of study
-        deltaZ % distance (um) above funnel tip to analyze intensity
+        deltaZ double = 50 % distance (nm) above funnel tip to analyze intensity
         options.lam0 double = 0 % wavelength used for distribution plot
         options.funnelHeight = 100 % funnel height used for distribution plot
         options.LineStyle string = "-";
@@ -15,6 +12,7 @@ function processStudy(sweepName, deltaZ, options)
     %%
     fileList = load([sweepName, '/fileNameArr.mat']);
     fileNameArr = fileList.fileNameArr;
+    mkdir([sweepName,'/','figs']);
 
     disp(sweepName);
 
@@ -125,7 +123,7 @@ function processStudy(sweepName, deltaZ, options)
     xticks((lam0Arr(1):2:lam0Arr(end)))
     grid on
     set(gca, 'FontSize', 18);
-    exportgraphics(gcf, [sweepName, '/EffectiveFocalRadiusByHeight', '.png'])
+    exportgraphics(gcf, [sweepName, '/figs/EffectiveFocalRadiusByHeight', '.png'])
 
     figure(4);
     title 'Enhancement';
@@ -136,7 +134,7 @@ function processStudy(sweepName, deltaZ, options)
     xticks((lam0Arr(1):2:lam0Arr(end)))
     grid on
     set(gca, 'FontSize', 18);
-    exportgraphics(gcf, [sweepName, '/MaxIntensityByHeight', '.png'])
+    exportgraphics(gcf, [sweepName, '/figs/MaxIntensityByHeight', '.png'])
 
 
     figure(5);
@@ -148,7 +146,7 @@ function processStudy(sweepName, deltaZ, options)
     xlim([lam0Arr(1),lam0Arr(end)]);
     xticks((lam0Arr(1):2:lam0Arr(end)))
     set(gca, 'FontSize', 16);
-    exportgraphics(gcf, [sweepName, '/TransmissionByHeight', '.png'])
+    exportgraphics(gcf, [sweepName, '/figs/TransmissionByHeight', '.png'])
 
     figure(2);
     hold on;
@@ -177,7 +175,7 @@ function processStudy(sweepName, deltaZ, options)
     lgd.Title.String = 'numLayers';
     lgd.Location = 'northwest';
     set(gca, 'FontSize', 18);
-    exportgraphics(gcf, [sweepName, '/maxIntensityVFocalRadius', num2str(lam0Arr(lam0Index)), '.png']);
+    exportgraphics(gcf, [sweepName, '/figs/maxIntensityVFocalRadius', num2str(lam0Arr(lam0Index)), '.png']);
 
     figure(6);
     hold off;

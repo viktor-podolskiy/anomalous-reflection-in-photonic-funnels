@@ -1,7 +1,7 @@
 clear, clc;
 close all
 
-%%%%%---Initialization---%%%%%
+%% %%%%%---Initialization---%%%%%
 
 %%% Wavelength Sweep
 study.lam0Arr = (12:0.5:18);
@@ -74,7 +74,7 @@ study.windowDr = (study.windowWidth - study.windowR0)/(study.windowNr-1);
 % Path where results will be saved
 study.sweepName = 'results/HMM-sweep';
 
-%%%%%---Run COMSOL---%%%%%
+%% %%%%%---Run COMSOL---%%%%%
 model = mphload("Funnel.mph");
 runStudy(study, model);
 
