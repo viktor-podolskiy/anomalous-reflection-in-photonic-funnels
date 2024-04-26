@@ -6,6 +6,6 @@ To just process the provided data without running any simulations, comment out t
   - `study.sweepName = 'results/HMM-sweep'`
 - for the study of in-plane polarized dipole radiation at the funnel tip set
   - `study.sim = 1`
-  - `study.sweepName = 'results/HMM-sweep-X'`
-then run `main.m`. 
+  - `study.sweepName = 'results/HMM-sweep-X'`    
+then run `main.m`.    
 Alternatively, you can call the `processStudy(path)` or `processEmission(path)` functions on incident waves or emitted radiation studies respectively, where `path` is the path to the directory containing the generated data. 
