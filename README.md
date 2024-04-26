@@ -1,5 +1,4 @@
-To run studies and process data, simply run the `main.m` script.
-This requires the COMSOL Wave Optics module. 
+To run studies and process data, simply run the `main.m` script. This requires the COMSOL Wave Optics module.    
 To just process the provided data without running any simulations, comment out the `Run COMSOL` portion of the `main.m` script and 
 - for the study of plane waves normally incident from below the funnel set
   - `study.sim = 0`
