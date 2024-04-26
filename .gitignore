@@ -1,0 +1,9 @@
+
+# autosaved comsol models
+*autosaved.mph
+
+# autosaved matlab files
+*.asv
+
+# figures
+*.png
